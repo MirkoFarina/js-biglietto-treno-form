@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: blueviolet;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px black;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+label {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.card button {
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.card h3 {
+  text-align: left;
+}
+
+.content-card  {
+  border: 1px solid gray;
+  border-right: none;
+}
+
+.content-card ul {
+  display: flex;
+  list-style: none;
+}
+
+.content-card li {
+  padding: 60px;
+}
+
+.content-card ul li:first-child {
+  background-color: gainsboro;
+}
+
+h5 {
+  margin-bottom: 40px;
+}
+
