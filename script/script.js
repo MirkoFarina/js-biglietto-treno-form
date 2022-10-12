@@ -12,19 +12,27 @@ Allego un possibile layout ma siete liberi di sbizzarrirvi con la vostra fantasi
 const nomeCognome = document.getElementById('nome-cognome').value;
 const numeroKm = document.getElementById('km').value;
 const fasciaEta = document.getElementById('fascia-eta').value;
-console.log(fasciaEta);
 const prezzoAlKm = 0.21;
 const scontoMinorenni = 0.2;
 const scontoOver65 = 0.4;
 const prezzoBiglietto = numeroKm * prezzoAlKm ;
+const btnGenera = document.getElementById('genera');
+console.log(btnGenera);
 let prezzoFinale;
 
-if (fasciaEta === 'minorenne') {
-  prezzoFinale = prezzoBiglietto * (1 - scontoMinorenni);
-} else if (fasciaEta === 'over65') {
-  prezzoFinale = prezzoBiglietto * (1 - scontoOver65);
-} else {
-  prezzoFinale = prezzoBiglietto;
+
+btnGenera.addEventListener('click', generaPrezzo);
+
+function generaPrezzo (){
+  if (fasciaEta === 'minorenne') {
+    prezzoFinale = prezzoBiglietto * (1 - scontoMinorenni);
+  } else if (fasciaEta === 'over65') {
+    prezzoFinale = prezzoBiglietto * (1 - scontoOver65);
+  } else {
+    prezzoFinale = prezzoBiglietto;
+  }
+  console.log(prezzoFinale.toFixed(2));
 }
 
-console.log(prezzoFinale.toFixed(2));
+
+
