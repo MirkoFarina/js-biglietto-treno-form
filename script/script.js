@@ -17,8 +17,10 @@ const scontoMinorenni = 0.2;
 const scontoOver65 = 0.4;
 const prezzoBiglietto = numeroKm * prezzoAlKm ;
 const btnGenera = document.getElementById('genera');
-console.log(btnGenera);
+const numeroCarrozza = Math.floor(Math.random() * 10 + 1);
+const codiceCp = Math.random()*10000;
 let prezzoFinale;
+
 
 
 btnGenera.addEventListener('click', generaPrezzo);
@@ -26,13 +28,32 @@ btnGenera.addEventListener('click', generaPrezzo);
 function generaPrezzo (){
   if (fasciaEta === 'minorenne') {
     prezzoFinale = prezzoBiglietto * (1 - scontoMinorenni);
+    document.getElementById('offerta').innerHTML= 'Biglietto minorenni';
   } else if (fasciaEta === 'over65') {
     prezzoFinale = prezzoBiglietto * (1 - scontoOver65);
+    document.getElementById('offerta').innerHTML= 'Biglietto Over65';
   } else {
     prezzoFinale = prezzoBiglietto;
+    document.getElementById('offerta').innerHTML= 'Biglietto Standard';
   }
-  console.log(prezzoFinale.toFixed(2));
+
+  document.getElementById('nome').innerHTML=`
+    <strong> ${nomeCognome} </strong>
+  `;
+
+  document.getElementById('n-carrozza').innerHTML=`
+    ${numeroCarrozza}
+  `;
+  
+  document.getElementById('codice').innerHTML= `
+    ${codiceCp.toFixed(0)}
+  `;
+
+  document.getElementById('costo').innerHTML= `
+    ${prezzoFinale.toFixed(2)}€
+  `;
 }
+
 
 
 
